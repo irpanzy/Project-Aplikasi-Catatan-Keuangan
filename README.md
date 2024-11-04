@@ -1,6 +1,12 @@
-# project_apk_catatan_keuangan
+# Project Aplikasi-Catatan-Keuangan
 
-A new Flutter project.
+## Anggota Kelompok
+
+- Ricky  Revenando (2211104047)
+- Yogi Hafidh M. (2211104061)
+- Ganesha R. Gibran (2211104058)
+- Irfan Muria (2211104075)
+- Satria Ariq A. D. (2211104033)
 
 ## Getting Started
 
