@@ -36,12 +36,17 @@ Proyek ini adalah titik awal untuk aplikasi Flutter.
    ```bash
    cd Project-Aplikasi-Catatan-Keuangan
    ```
-3. **Install Dependencies**:
+3. **Pindah ke Branch development**:
+   Setelah berada di dalam direktori proyek, jalankan perintah ini untuk beralih ke branch development:
+   ```bash
+   git checkout development
+   ```
+4. **Install Dependencies**:
    Pastikan Anda sudah menginstall [Flutter](https://flutter.dev) terlebih dahulu. Setelah itu, jalankan:
    ```bash
    flutter pub get
    ```
-4. **Jalankan Aplikasi**:
+5. **Jalankan Aplikasi**:
    ```bash
    flutter run
    ```
