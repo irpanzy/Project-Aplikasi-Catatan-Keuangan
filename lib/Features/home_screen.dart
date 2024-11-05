@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Colors.lime[400],
+                  color: Color(0xFFCCFF00),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           backgroundImage: AssetImage(
-                              'assets/images/ganesha.png'), // Replace with actual profile image path
+                              'assets/images/ganesha.png'),
                           radius: 24,
                         ),
                         SizedBox(width: 8),
@@ -80,9 +80,9 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _buildIncomeExpenseBox(
-                      Icons.arrow_upward, 'Pemasukan', '2.000 IDR', Colors.green),
+                      Icons.arrow_upward, 'Pemasukan', '2.000 IDR', Color(0xFFB2E600)),
                   _buildIncomeExpenseBox(Icons.arrow_downward, 'Pengeluaran',
-                      '10.000 IDR', Colors.red),
+                      '10.000 IDR', Color(0xFFE60000)),
                 ],
               ),
               SizedBox(height: 16),
@@ -114,30 +114,40 @@ class HomeScreen extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.home, color: Colors.black),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/home');
+              },
             ),
             IconButton(
               icon: Icon(Icons.history, color: Colors.grey),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/history');
+              },
             ),
             Container(
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.green[500],
+                color: Color(0xFFB2E600),
                 shape: BoxShape.circle,
               ),
               child: IconButton(
                 icon: Icon(Icons.add, color: Colors.white),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/add');
+                },
               ),
             ),
             IconButton(
               icon: Icon(Icons.category, color: Colors.grey),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/statistik');
+              },
             ),
             IconButton(
               icon: Icon(Icons.settings, color: Colors.grey),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/setting');
+              },
             ),
           ],
         ),
@@ -160,7 +170,7 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 12, color: Colors.grey[700])),
             ],
           ),
-          Text(amount, style: TextStyle(fontSize: 14, color: Colors.red)),
+          Text(amount, style: TextStyle(fontSize: 14, color: Color(0xFFE60000))),
         ],
       ),
     );
@@ -206,7 +216,7 @@ class HomeScreen extends StatelessWidget {
   List<PieChartSectionData> _getSections() {
     return [
       PieChartSectionData(
-        color: Colors.green,
+        color: Color(0xFFB2E600),
         value: 20,
         title: '20%',
         radius: 50,
@@ -214,7 +224,7 @@ class HomeScreen extends StatelessWidget {
             fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
       ),
       PieChartSectionData(
-        color: Colors.red,
+        color: Color(0xFFE60000),
         value: 80,
         title: '80%',
         radius: 50,
