@@ -2,11 +2,11 @@
 # Project Aplikasi Catatan Keuangan
 
 ## Anggota Kelompok
-- Ricky Revanando (221110407)
-- Voyi Hafidh M. (221110406)
-- Ganesh R. Gilbran (221110458)
+- Ricky Revanando (2211104047)
+- Yogi Hafidh M. (2211104061)
+- Ganesha R. Gibran (221110458)
 - Irfan Muria (221110475)
-- Satria Arija D. (221110483)
+- Satria Ariq A. D. (221110433)
 
 ## Deskripsi Proyek
 Aplikasi Catatan Keuangan ini dibuat untuk membantu pengguna dalam mencatat aktivitas keuangan harian mereka, baik pengeluaran maupun pemasukan. Aplikasi ini juga menyediakan laporan bulanan, mingguan, dan tahunan, sehingga pengguna dapat melacak dan mengelola keuangan mereka dengan lebih baik.
