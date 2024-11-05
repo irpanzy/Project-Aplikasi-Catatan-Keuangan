@@ -57,7 +57,6 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
 
-              // Expense section
               Text(
                 'Pengeluaran Terbesar Bulan ini',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -72,7 +71,6 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
 
-              // Monthly recap section with pie chart
               Text(
                 'Recap bulan ini',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -94,7 +92,6 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       
-      // Bottom Navigation Bar
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
@@ -108,7 +105,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.black.withOpacity(0.1),
               spreadRadius: 2,
               blurRadius: 8,
-              offset: Offset(0, -2), // Posisi shadow
+              offset: Offset(0, -2),
             ),
           ],
         ),
@@ -148,7 +145,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Helper widget to build expense item
   Widget _buildExpenseItem(String category, String description, String amount) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -170,7 +166,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Helper widget for income and expense box
   Widget _buildIncomeExpenseBox(
       IconData icon, String title, String amount, Color color) {
     return Container(
@@ -195,7 +190,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Method to build the pie chart
   Widget _buildPieChart() {
     return AspectRatio(
       aspectRatio: 1.3,
@@ -209,7 +203,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Method to define each section of the pie chart
   List<PieChartSectionData> _getSections() {
     return [
       PieChartSectionData(

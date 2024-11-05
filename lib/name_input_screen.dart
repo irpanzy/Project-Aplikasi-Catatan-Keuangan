@@ -34,9 +34,9 @@ class NameInputScreen extends StatelessWidget {
               child: Text('Lanjut'),
               style: ElevatedButton.styleFrom(
                 backgroundColor:
-                    Colors.black, // Use backgroundColor instead of primary
+                    Colors.black, 
                 foregroundColor:
-                    Colors.white, // Use foregroundColor instead of onPrimary
+                    Colors.white, 
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 textStyle: TextStyle(fontSize: 18),
               ),
