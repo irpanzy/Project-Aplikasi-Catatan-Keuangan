@@ -5,7 +5,7 @@
 - Ricky Revanando (221110407)
 - Voyi Hafidh M. (221110406)
 - Ganesh R. Gilbran (221110458)
-- Intan Muria (221110475)
+- Irfan Muria (221110475)
 - Satria Arija D. (221110483)
 
 ## Deskripsi Proyek
