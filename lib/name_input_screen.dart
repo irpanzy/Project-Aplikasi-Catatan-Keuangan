@@ -6,7 +6,7 @@ class NameInputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime,
+      backgroundColor: Colors.lime[400],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
