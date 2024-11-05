@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'intro_screen.dart';
-import 'name_input_screen.dart';
-import 'home_screen.dart';
+import 'SplashScreen/intro_screen.dart';
+import 'SplashScreen/name_input_screen.dart';
+import 'Features/home_screen.dart';
+import 'Features/history_screen.dart';
+import 'Features/statistik_screen.dart';
 
 void main() {
   runApp(SaveMoneyApp());
@@ -20,6 +22,8 @@ class SaveMoneyApp extends StatelessWidget {
         '/': (context) => IntroScreen(),
         '/name_input': (context) => NameInputScreen(),
         '/home': (context) => HomeScreen(),
+        '/history': (context) => HistoryScreen(),
+        '/statistik': (context) => StatistikScreen(),
       },
     );
   }
