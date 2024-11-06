@@ -4,7 +4,7 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime,
+      backgroundColor: Color(0xFFCCFF00),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -15,12 +15,11 @@ class IntroScreen extends StatelessWidget {
                 children: [
                   Text(
                     'SaveMoney',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 40, fontFamily: "Poppins_SemiBold"), 
                   ),
-                  SizedBox(height: 8),
                   Text(
                     'Kelola keuangan anda',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 12, fontFamily: "Poppins_Light"), 
                   ),
                 ],
               ),
@@ -32,14 +31,12 @@ class IntroScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/name_input');
               },
-              child: Text('Mulai'),
+              child: Text('Start'),
               style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    Colors.black, 
-                foregroundColor:
-                    Colors.white, 
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                textStyle: TextStyle(fontSize: 18),
+                textStyle: TextStyle(fontSize: 18, fontFamily: "Poppins_Regular"), // Akan memakai Poppins
               ),
             ),
           ),

@@ -6,14 +6,14 @@ class NameInputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime[400],
+      backgroundColor: Color(0xFFCCFF00),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Siapa Nama Anda',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontFamily: "Poppins_SemiBold"),
             ),
             SizedBox(height: 16),
             Padding(
@@ -23,6 +23,7 @@ class NameInputScreen extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Masukkan nama anda',
+                  hintStyle: TextStyle(fontSize: 14, fontFamily: "Poppins_Regular"),
                 ),
               ),
             ),
@@ -31,14 +32,12 @@ class NameInputScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/home');
               },
-              child: Text('Lanjut'),
+              child: Text('Next'),
               style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    Colors.black, 
-                foregroundColor:
-                    Colors.white, 
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                textStyle: TextStyle(fontSize: 18),
+                textStyle: TextStyle(fontSize: 18, fontFamily: "Poppins_Regular"),
               ),
             ),
           ],

@@ -4,7 +4,7 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Color(0xFFCCFF00),
         title: TextField(
@@ -29,7 +29,6 @@ class HistoryScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Date Filter (Hari, Minggu, Bulan, Tahun)
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -40,7 +39,6 @@ class HistoryScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 16),
-            // Transaction list
             Expanded(
               child: ListView(
                 children: [
@@ -83,13 +81,13 @@ class HistoryScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              icon: Icon(Icons.home, color: Colors.black),
+              icon: Icon(Icons.home, color: Colors.grey),
               onPressed: () {
                 Navigator.pushNamed(context, '/home');
               },
             ),
             IconButton(
-              icon: Icon(Icons.history, color: Colors.grey),
+              icon: Icon(Icons.history, color: Colors.black),
               onPressed: () {
                 Navigator.pushNamed(context, '/history');
               },
@@ -97,7 +95,7 @@ class HistoryScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.green[500],
+                color: Color(0xFFB2E600),
                 shape: BoxShape.circle,
               ),
               child: IconButton(
@@ -129,8 +127,8 @@ class HistoryScreen extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
+        fontSize: 14,
+        fontFamily: "Poppins_Regular",
       ),
     );
   }
@@ -140,15 +138,27 @@ class HistoryScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(date, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(date, style: TextStyle(fontSize: 24, fontFamily: "Poppins_Bold")),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Pemasukan: $income'),
-            Text('Pengeluaran: $expense', style: TextStyle(color: Colors.red)),
+            Text('Pemasukan: $income',
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Poppins_Regular",
+                    color: Color(0xFFB2E600))),
+            Text('Pengeluaran: $expense',
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Poppins_Regular",
+                    color: Color(0xFFE60000))),
           ],
         ),
-        Text('Saldo: $balance', style: TextStyle(color: Colors.green)),
+        Text('Saldo: $balance',
+            style: TextStyle(
+                fontSize: 14,
+                fontFamily: "Poppins_Regular",
+                color: Colors.black)),
         ...expenseDetails,
         Divider(),
       ],
@@ -163,8 +173,13 @@ class HistoryScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(category, style: TextStyle(fontSize: 14)),
-            Text(description, style: TextStyle(color: Colors.grey)),
+            Text(category,
+                style: TextStyle(fontSize: 14, fontFamily: "Poppins_Medium")),
+            Text(description,
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Poppins_Regular",
+                    color: Colors.grey)),
           ],
         ),
         Text(amount, style: TextStyle(color: Colors.red)),
