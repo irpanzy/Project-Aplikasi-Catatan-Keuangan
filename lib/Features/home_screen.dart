@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200], 
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -15,7 +15,11 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Color(0xFFCCFF00),
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFCCFF00), Color(0xFFB2E600)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -24,8 +28,8 @@ class HomeScreen extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage(
-                              'assets/images/ganesha.png'),
+                          backgroundImage:
+                              AssetImage('assets/images/ganesha.png'),
                           radius: 24,
                         ),
                         SizedBox(width: 8),
@@ -33,9 +37,16 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Halo! Ganesha Rahman',
+                              'Hallo!',
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 12,
+                                fontFamily: "Poppins_Regular",
+                              ),
+                            ),
+                            Text(
+                              'Ganesha Rahman',
+                              style: TextStyle(
+                                  fontSize: 16, fontFamily: "Poppins_SemiBold"),
                             ),
                           ],
                         ),
@@ -46,52 +57,54 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 16),
                     Text(
                       'Saldo anda',
-                      style: TextStyle(fontSize: 16, color: Colors.black54),
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "Poppins_Regular",
+                          color: Colors.black54),
                     ),
                     Text(
                       '150.000 IDR',
-                      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 40, fontFamily: "Poppins_Bold"),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 24),
-
+              SizedBox(height: 50),
               Text(
                 'Pengeluaran Terbesar Bulan ini',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18, fontFamily: "Poppins_SemiBold"),
               ),
               SizedBox(height: 8),
               Column(
                 children: [
-                  _buildExpenseItem('Fashion', 'Sepatu ardiles', 'Rp100,000.00'),
+                  _buildExpenseItem(
+                      'Fashion', 'Sepatu ardiles', 'Rp100,000.00'),
                   _buildExpenseItem('Sedekah', 'Traktir teman', 'Rp50,000.00'),
                   _buildExpenseItem('Rumah', 'Lampu Bohlam', 'Rp50,000.00'),
                 ],
               ),
-              SizedBox(height: 24),
-
+              SizedBox(height: 75),
               Text(
                 'Recap bulan ini',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18, fontFamily: "Poppins_SemiBold"),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildIncomeExpenseBox(
-                      Icons.arrow_upward, 'Pemasukan', '2.000 IDR', Color(0xFFB2E600)),
+                  _buildIncomeExpenseBox(Icons.arrow_upward, 'Pemasukan',
+                      '2.000 IDR', Color(0xFFB2E600)),
                   _buildIncomeExpenseBox(Icons.arrow_downward, 'Pengeluaran',
                       '10.000 IDR', Color(0xFFE60000)),
                 ],
               ),
-              SizedBox(height: 16),
-              _buildPieChart(),
+              SizedBox(height: 20),
+              _buildDoughnutChart(),
             ],
           ),
         ),
       ),
-      
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
@@ -164,13 +177,32 @@ class HomeScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(category,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              Text(description,
-                  style: TextStyle(fontSize: 12, color: Colors.grey[700])),
+              Text(
+                category,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins_Medium",
+                ),
+              ),
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[700],
+                  fontFamily: "Poppins_Regular",
+                ),
+              ),
             ],
           ),
-          Text(amount, style: TextStyle(fontSize: 14, color: Color(0xFFE60000))),
+          Text(
+            amount,
+            style: TextStyle(
+              fontSize: 14,
+              color: Color(0xFFE60000),
+              fontFamily: "Poppins_Medium",
+            ),
+          ),
         ],
       ),
     );
@@ -179,7 +211,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildIncomeExpenseBox(
       IconData icon, String title, String amount, Color color) {
     return Container(
-      width: 120,
+      width: 225,
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -192,45 +224,57 @@ class HomeScreen extends StatelessWidget {
         children: [
           Icon(icon, color: color),
           SizedBox(height: 8),
-          Text(title,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-          Text(amount, style: TextStyle(fontSize: 14, color: Colors.black)),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 12,
+              fontFamily: "Poppins_SemiBold",
+            ),
+          ),
+          Text(
+            amount,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+              fontFamily: "Poppins_Bold",
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildPieChart() {
+  Widget _buildDoughnutChart() {
     return AspectRatio(
-      aspectRatio: 1.3,
-      child: PieChart(
-        PieChartData(
-          sections: _getSections(),
-          centerSpaceRadius: 100,
-          sectionsSpace: 4,
-        ),
+      aspectRatio: 1,
+      child: SfCircularChart(
+        series: <CircularSeries>[
+          DoughnutSeries<ChartData, String>(
+            dataSource: _getChartData(),
+            xValueMapper: (ChartData data, _) => data.category,
+            yValueMapper: (ChartData data, _) => data.value,
+            dataLabelMapper: (ChartData data, _) => data.percentage,
+            pointColorMapper: (ChartData data, _) => data.color,
+            dataLabelSettings: DataLabelSettings(isVisible: true),
+          )
+        ],
       ),
     );
   }
 
-  List<PieChartSectionData> _getSections() {
+  List<ChartData> _getChartData() {
     return [
-      PieChartSectionData(
-        color: Color(0xFFB2E600),
-        value: 20,
-        title: '20%',
-        radius: 50,
-        titleStyle: TextStyle(
-            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-      ),
-      PieChartSectionData(
-        color: Color(0xFFE60000),
-        value: 80,
-        title: '80%',
-        radius: 50,
-        titleStyle: TextStyle(
-            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-      ),
+      ChartData('Pemasukan', 20, '20%', Color(0xFFB2E600)),
+      ChartData('Pengeluaran', 80, '80%', Color(0xFFE60000)),
     ];
   }
+}
+
+class ChartData {
+  final String category;
+  final double value;
+  final String percentage;
+  final Color color;
+
+  ChartData(this.category, this.value, this.percentage, this.color);
 }
